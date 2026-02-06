@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://ummoodle.um.edu.mo/pluginfile.php/1691614/mod_page/content/7/cisc3003-practice04.html?time=1770336308175 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <title>CISC3003: Practice 04</title>
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/cisc3003-practice04.css">
+</head>
+<body>
+<header>
+     <h1>Share Your Travels</h1>
+     <p>let us know where you've been</p>
+</header>
+<main>
+   <section>
+   	<h2>PHOTO DETAILS</h2>
+
+			<div class="form-group">
+				<label for="title">Title</label> 
+				<input type="text" name="title" placeholder="Give your photo a descriptive name" id="title">
+			</div>
+
+			<div class="form-group">
+				<label for="description">Description</label>
+				<textarea name="description" rows="5" cols="61"
+					placeholder="Adding a rich description will help with search results"
+					id="description"></textarea>
+			</div>
+
+			<div class="form-row">
+				<div class="form-col">
+					<label for="continent">Continent</label> <select name="continent"
+						id="continent">
+						<option value="">Choose continent</option>
+						<option value="africa">Africa</option>
+						<option value="asia">Asia</option>
+						<option value="europe">Europe</option>
+						<option value="northamerica">North America</option>
+						<option value="southamerica">South America</option>
+					</select> <label for="country">Country</label> <select name="country"
+						id="country">
+						<option value="">Choose country</option>
+						<option value="canada">Canada</option>
+						<option value="mexico">Mexico</option>
+						<option value="usa">USA</option>
+					</select> <label for="city">City</label> <input type="text" name="city"
+						id="city">
+				</div>
+
+				<div class="form-col">
+					<div class="radio-group">
+						<p>Copyright?</p>
+						<div class='opstion'>
+							<input type="radio" name="copyright" id="allrights" value="allrights"> 
+							<label for="allrights">All rights reserved</label><br>
+						</div>
+						<div class='opstion'>
+							<input type="radio" name="copyright" id="creativecommons" value="creativecommons" checked> 
+							<label for="creativecommons">Creative Commons</label>
+						</div>
+		
+					</div>
+
+					<div class="checkbox-group">
+						<p>Creative Commons Types</p>
+						<div class='opstion'>
+							<input type="checkbox" name="cc[]" id="attribution" value="1">
+							<label for="attribution">Attribution</label><br> 
+						</div>
+						<div class='opstion'>
+							<input type="checkbox" name="cc[]" id="noncommercial" value="2">
+							<label for="noncommercial">Noncommercial</label><br> 
+						</div>
+						
+						<div class='opstion'>
+							<input type="checkbox" name="cc[]" id="noderivative" value="3">
+							<label for="noderivative">No Derivative Works</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="license-group">
+				 <label for="license">I accept the software license</label>
+				 <input type="checkbox" name="license" id="license">
+			</div>
+
+			<div class="form-row">
+				<div class="form-col" id='form-col-down-right'>
+					<label for="rate">Rate this photo:</label>
+					 <input type="number" min="1" max="5" name="rate" id="rate"> 
+					 <label for="color">Color Collection:</label>
+					  <input type="color" name="color" id="color">
+				</div>
+
+				<div class="form-col">
+					<label for="date">Date Taken:</label> 
+					<input type="date" name="date" id="date" > 
+					<label for="time">Time Taken:</label> 
+					<input type="time" name="time" id="time">
+				</div>
+			</div>
+
+			<div class="button-group">
+				<input type="submit" value="Submit" class="rounded"> <input
+					type="reset" value="Clear Form" class="rounded">
+			</div>
+
+		</section>
+</main>  
+
+
+
+</body></html>
