@@ -1,0 +1,160 @@
+body, header, div, p, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", "Arial", sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', "Times New Roman", serif;
+}
+
+header {
+    position: relative; 
+}
+.banner {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%) brightness(0.6) contrast(1.2);
+}
+.banner--title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+header h1, header h2 {
+    color: white;
+}
+header h1 {
+    font-size: 48px;
+}
+header h2 {
+    font-size: 36px;
+}
+header span {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+    width: 160px;
+    padding: 9px;
+    border: solid 1px white;
+}
+header span a:link,
+header span a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.highlights {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.highlights--container {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.highlights--media {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+.highlights--media img {
+    width: 100%;
+    height: auto;
+}
+.highlights--text {
+    float: left;
+    width: 65%;
+}
+.highlights--button {
+    float: right;
+    background-color: #f90;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.highlights::after,
+.highlights--container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.mosaic {
+    width: calc(4 * 285px + 3 * 10px); 
+    margin: 40px auto;
+    display: grid;
+    
+    grid-template-columns: repeat(4, 285px);
+    
+    grid-template-rows: repeat(5, 190px);
+    gap: 10px; 
+    height: calc(5 * 190px + 4 * 10px);
+}
+
+.mosaic-item {
+    overflow: hidden;
+}
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.mosaic--a { 
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+.mosaic--b { 
+    grid-column: 3;
+    grid-row: 1;
+}
+.mosaic--c { 
+    grid-column: 3;
+    grid-row: 2;
+}
+.mosaic--d { 
+    grid-column: 4;
+    grid-row: 1 / span 2;
+}
+
+
+.mosaic--e {
+    grid-column: 1;
+    grid-row: 3 / span 2;
+}
+.mosaic--f { 
+    grid-column: 2;
+    grid-row: 3;
+}
+.mosaic--g { 
+    grid-column: 3;
+    grid-row: 3;
+}
+.mosaic--h { 
+    grid-column: 4;
+    grid-row: 3 / span 2;
+}
+
+
+.mosaic--i {
+    grid-column: 1;
+    grid-row: 5;
+}
+.mosaic--j { 
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 2;
+}
+.mosaic--k { 
+    grid-column: 4;
+    grid-row: 5;
+}
