@@ -269,12 +269,12 @@ img {
     padding: 60px 0 20px;
 }
 
-/* 关键修改：设置页脚内所有链接为白色 */
+
 .footer a {
     color: #fff;
 }
 
-/* 链接悬停效果 */
+
 .footer a:hover {
     color: #ff523b;
 }
