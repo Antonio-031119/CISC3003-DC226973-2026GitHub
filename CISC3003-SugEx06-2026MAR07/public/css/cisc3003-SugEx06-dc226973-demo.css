@@ -1,0 +1,762 @@
+@charset "UTF-8";
+
+/* === 通用重置与基础样式 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #563434;
+}
+
+.section-padding {
+    padding: 70px 0;
+}
+
+.bg-light {
+    background: #f5f5f5;
+}
+
+.section-title {
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    line-height: 1.2;
+    color: #555;
+}
+
+.section-title::after {
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 4px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Header */
+.header {
+    background: radial-gradient(circle, #ffffff 0%, #ffd7d7 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a:hover {
+    color: #ff523b;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle img {
+    height: 24px;
+}
+
+/* Banner */
+.home-banner {
+    background: radial-gradient(#fff, #ffd6d6);
+    padding: 60px 0;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.banner-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-text h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    margin: 20px 0;
+}
+
+.banner-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+/* Categories */
+.categories-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-card {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Products */
+.products-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.product-card {
+    flex: 1;
+    min-width: 220px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #ff523b;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Offer */
+.offer {
+    background: radial-gradient(#fff, #ffd6d6);
+}
+
+.offer-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.offer-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.offer-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.offer-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff523b;
+}
+
+/* Testimonials */
+.testimonials-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    padding: 30px 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.testimonial-card .fa-quote-left {
+    font-size: 24px;
+    color: #ff523b;
+    margin-bottom: 10px;
+}
+
+.customer-info {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-info img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* Brands */
+.brands-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    color: #ff523b;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer-col {
+    min-width: 200px;
+    flex: 1;
+    text-align: center;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-col img {
+    margin-bottom: 15px;
+}
+
+.app-logo img {
+    height: 40px;
+    margin: 5px;
+}
+
+.social-icons i {
+    font-size: 18px;
+    margin: 0 8px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    color: #8a8a8a;
+}
+
+/* all products */ 
+.row-2 {
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+
+select {
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+
+select :focus {
+    outline: none;
+}
+
+.page-btn {
+    margin: 0 auto 80px;
+}
+
+.page-btn span {
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.page-btn span:hover {
+    background: #ff523b; 
+    color: #fff;         
+}
+
+/* single product detail */
+.single-product {
+    margin-top: 80px;
+}
+
+.single-product .banner-image image {
+    padding: 0;
+}
+
+.single-product .banner-image {
+    padding: 20px;
+}
+
+.single-product h4 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.single-product h3 {
+    margin-top: 20px;
+}
+
+.single-product select {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ff523b;
+}
+
+input:focus {
+    outline: none;
+}
+
+.single-product .fas {
+    color: #ff523b;
+    margin-left: 10px;
+}
+
+.small-img-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+/* 
+=============================================
+Shopping Cart & Login Page Styles 
+=============================================
+*/
+
+/* 通用表单样式 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+
+/* 购物车页面背景 */
+.cart {
+    background: #f9f9f9;
+    padding: 20px 0;
+}
+
+/* 容器居中 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 表格整体样式 */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* 合并边框，看起来更紧凑 */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 增加一点阴影层次感 */
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* 表头样式 (红色背景) */
+.cart-table thead th {
+    background-color: #ff523b;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.cart-table thead th:first-child {
+    border-top-left-radius: 5px; /* 圆角 */
+}
+
+.cart-table thead th:last-child {
+    border-top-right-radius: 5px; /* 圆角 */
+}
+
+/* 表格内容单元格 */
+.cart-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #eee; /* 每行下面的细线 */
+    color: #333;
+    vertical-align: middle; /* 让内容垂直居中 */
+}
+
+/* 商品列样式 (包含图片和文字) */
+/* 关键代码：让表格单元格内的内容横向排列 */
+.product-col {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 15px;           /* 图片和文字之间的间距 */
+}
+
+/* 商品图片容器 */
+.product-image-wrapper {
+    flex-shrink: 0; /* 防止图片容器缩小 */
+}
+
+/* 图片样式 */
+.product-image-wrapper img {
+    width: 80px;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* 文字部分 */
+.product-text {
+    flex: 1; /* 占据剩余空间 */
+}
+
+.product-text h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.price {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.remove-link {
+    color: #ff523b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.remove-link:hover {
+    text-decoration: underline;
+}
+
+/* 数量输入框样式 */
+.quantity-col input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.quantity-col input[type="number"]:focus {
+    outline: none;
+    border-color: #ff523b;
+}
+
+/* 小计列 */
+.subtotal-col {
+    font-weight: bold;
+    color: #ff523b;
+    text-align: center;
+}
+
+/* 结算栏样式 (表格底部) */
+.cart-table tfoot td {
+    padding: 12px 15px;
+    font-weight: bold;
+    border-top: 2px solid #ddd; /* 顶部粗线 */
+    border-bottom: none; /* 去掉底部线 */
+}
+
+/* 结算栏的标签（如 "Subtotal"） */
+.summary-label {
+    text-align: left;
+    font-weight: normal;
+    color: #666;
+}
+
+/* 结算栏的数值 */
+.summary-value {
+    text-align: right;
+    color: #333;
+}
+
+/* 总计行（最后一行） */
+.total-label {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 18px;
+}
+
+.total-value {
+    background-color: #f9f9f9;
+    color: #ff523b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 按钮样式（如果需要） */
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #ff523b;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.checkout-btn:hover {
+    background: #e04a34;
+}
+
+/* 
+=============================================
+Login & Signup Page 
+=============================================
+*/
+
+.auth {
+    /* 径向渐变：中心白色，边缘 #FFD7D7 */
+    background: radial-gradient(circle, #ffffff 0%, #ffd7d7 100%);
+    min-height: 100vh; /* 确保背景填满整个视口高度 */
+    padding: 60px 0;
+}
+
+.auth-container {
+     display: flex;  
+    gap: 30px; /* 图片与表单之间的间距 */
+    max-width: 1200px;
+    margin: 0 auto; /* 水平居中容器，但内部元素靠左排列 */
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    align-items: center; /* 垂直居中 */
+}
+
+/* --- 左侧图片样式 --- */
+.auth-image {
+    flex: 0 0 40%; /* 占据40%宽度，不伸缩 */
+    min-width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.auth-image img {
+    width: 100%;
+    height: auto; /* 保持图片比例 */
+    display: block;
+}
+
+/* --- 右侧表单样式 --- */
+.auth-box {
+    flex: 0 0 50%; /* 占据50%宽度 */
+    min-width: 300px;
+    background: #fff; /* 表单背景为白色 */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* --- 登录/注册切换样式 --- */
+.form-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    color: #ff523b;
+    border-bottom-color: #ff523b;
+    background: #fff;
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.submit-btn {
+    background: #ff523b;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #e04a34;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-footer a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    color: #ff523b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar ul {
+        flex-direction: column;
+        padding: 15px;
+    }
+}

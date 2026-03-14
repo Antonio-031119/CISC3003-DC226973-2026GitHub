@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="css/cisc3003-SugEx06-dc226973-demo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="Images/logo.png" alt="RedStore Logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <img src="Images/menu.png" alt="Menu Icon">
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="active">Account</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="cart.html" class="logo"><img alt="cart" src="Images/cart.png"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 登录/注册主体 -->
+    <section class="auth section-padding">
+        <div class="auth-container container">
+        
+        <!-- 左侧：背景图片 -->
+            <div class="auth-image">
+                <img src="Images/image1.png" alt="Login Background">
+            </div>
+            
+            <!-- 登录表单 -->
+           <div class="auth-box">
+    <!-- 切换按钮 (Tab) -->
+    <div class="form-tabs">
+        <div class="tab active" data-target="login-content">Login</div>
+        <div class="tab" data-target="signup-content">Sign Up</div>
+    </div>
+
+    <!-- 表单区域 -->
+    <form action="#" method="post">
+        <!-- 登录内容 -->
+        <div id="login-content" class="form-content active">
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="button" class="submit-btn">Login</button>
+            <div class="form-footer">
+                <a href="#">Forgot Password</a>
+            </div>
+        </div>
+
+        <!-- 注册内容 -->
+        <div id="signup-content" class="form-content">
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="button" class="submit-btn">Sign Up</button>
+            <div class="form-footer">
+                <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>Download Our App</h4>
+                <p>Download App for Android and iOS</p>
+                <div class="app-logo">
+                    <img src="Images/play-store.png" alt="Play Store">
+                    <img src="Images/app-store.png" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-col">
+                <img src="Images/logo-white.png" alt="White Logo">
+                <p>We provide quality products at affordable prices.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Delivery Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>CISC3003 Web Programming - 2026:DC226973 Chen Joaquin Antonio </p>
+        </div>
+    </footer>
+
+    <script>
+	document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.form-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // 1. 移除所有 Tab 的 active 类
+            tabs.forEach(t => t.classList.remove('active'));
+            // 2. 移除所有内容的 active 类
+            contents.forEach(c => c.classList.remove('active'));
+
+            // 3. 给当前点击的 Tab 添加 active 类
+            tab.classList.add('active');
+
+            // 4. 获取目标内容 ID 并显示
+            const targetId = tab.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+});
+</script>
+</body>
+</html>

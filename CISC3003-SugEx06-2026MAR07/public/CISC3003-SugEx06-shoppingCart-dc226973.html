@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cisc3003-SugEx06-dc226973-demo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="Images/logo.png" alt="RedStore Logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <img src="Images/menu.png" alt="Menu Icon">
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#" class="logo"><img alt="cart" src="Images/cart.png"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 购物车主体 -->
+    <section class="cart section-padding">
+        <div class="container">
+            <!-- 使用表格布局来匹配参考图 -->
+            <table class="cart-table">
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+
+                <!-- 表体：商品列表 -->
+				<tbody>
+				    <!-- 商品 1 -->
+				    <tr>
+				        <td class="product-col">
+				            <div class="product-image-wrapper">
+				                <img src="Images/product-1.jpg" alt="Red Printed T-Shirt">
+				            </div>
+				            <div class="product-text">
+				                <h3>Red Printed T-Shirt</h3>
+				                <p class="price">Price: USD50.00</p>
+				                <a href="#" class="remove-link">Remove</a>
+				            </div>
+				        </td>
+				        <td class="quantity-col">
+				            <input type="number" class="quantity-input" value="1" min="1">
+				        </td>
+				        <td class="subtotal-col">
+				            USD50.00
+				        </td>
+				    </tr>
+				
+				    <!-- 商品 2 -->
+				    <tr>
+				        <td class="product-col">
+				            <div class="product-image-wrapper">
+				                <img src="Images/product-2.jpg" alt="Black HRX Shoes">
+				            </div>
+				            <div class="product-text">
+				                <h3>Black HRX Shoes</h3>
+				                <p class="price">Price: USD75.00</p>
+				                <a href="#" class="remove-link">Remove</a>
+				            </div>
+				        </td>
+				        <td class="quantity-col">
+				            <input type="number" class="quantity-input" value="1" min="1">
+				        </td>
+				        <td class="subtotal-col">
+				            USD75.00
+				        </td>
+				    </tr>
+				
+				    <!-- 商品 3 -->
+				    <tr>
+				        <td class="product-col">
+				            <div class="product-image-wrapper">
+				                <img src="Images/product-3.jpg" alt="Blue Jeans">
+				            </div>
+				            <div class="product-text">
+				                <h3>Blue Jeans</h3>
+				                <p class="price">Price: USD75.00</p>
+				                <a href="#" class="remove-link">Remove</a>
+				            </div>
+				        </td>
+				        <td class="quantity-col">
+				            <input type="number" class="quantity-input" value="1" min="1">
+				        </td>
+				        <td class="subtotal-col">
+				            USD75.00
+				        </td>
+				    </tr>
+				</tbody>
+
+                <!-- 底部结算栏 -->
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="summary-label">Subtotal</td>
+                        <td class="summary-value">USD200.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="summary-label">Tax</td>
+                        <td class="summary-value">USD35.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="total-label">Total</td>
+                        <td class="total-value">USD235.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>Download Our App</h4>
+                <p>Download App for Android and iOS</p>
+                <div class="app-logo">
+                    <img src="Images/play-store.png" alt="Play Store">
+                    <img src="Images/app-store.png" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-col">
+                <img src="Images/logo-white.png" alt="White Logo">
+                <p>We provide quality products at affordable prices.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Delivery Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>CISC3003 Web Programming - 2026:DC226973 Chen Joaquin Antonio </p>
+        </div>
+    </footer>
+    <script>
+        // 简单的菜单切换逻辑
+        const menuToggle = document.getElementById('menuToggle');
+        const navbar = document.getElementById('navbar');
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
