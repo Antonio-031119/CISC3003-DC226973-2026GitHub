@@ -1,0 +1,136 @@
+
+<!-- saved from url=(0093)https://ummoodle.um.edu.mo/pluginfile.php/1733872/mod_page/content/5/cisc3003-practice08.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CISC3003 Practice 08</title>
+<link href="./CISC3003 Practice 08_files/css" rel="stylesheet" type="text/css">
+<link href="./CISC3003 Practice 08_files/css(1)" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>    
+<body class="tiled">
+<header>
+    <h1>Art Filters</h1>
+</header>
+<main>
+    <div id="sliderBox">
+        <form>
+           <label>Opacity: </label><p><input type="range" id="sliderOpacity" min="0" max="100" value="100" class="sliders"> <span id="numOpacity">100</span>%</p>
+           <p><label>Saturation: </label><input type="range" id="sliderSaturation" min="1" max="300" value="100" class="sliders"> <span id="numSaturation">100</span>%</p>
+           <p><label>Brightness: </label><input type="range" id="sliderBrightness" min="0" max="300" value="100" class="sliders"> <span id="numBrightness">100</span>%</p>
+           <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders"> <span id="numHue">0</span>deg</p>
+           <p><label>Grayscale: </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"> <span id="numGray">0</span>%</p>
+           <p><label>Blur: </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders"> <span id="numBlur">0</span>px</p>
+           <p><button id="resetFilters">Reset</button> </p>
+        </form>    
+    </div>
+    <figure id="imgManipulated">
+        <img src="images/medium/painting1.jpg"> 
+        <figcaption>
+            <em>Still Life with Flowers in a Glass Vase</em> <br>
+            Jan Davidsz. de Heem, 1650 - 1683
+        </figcaption>
+    </figure>   
+    <div id="thumbBox">
+        <div><img src="images/small/painting1.jpg" alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"></div>
+        <div><img src="images/small/painting2.jpg" alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"></div>
+        <div><img src="images/small/painting3.jpg" alt="Self-portrait" title="Vincent van Gogh, 1887"></div>
+        <div><img src="images/small/painting4.jpg" alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"></div>
+        <div><img src="images/small/painting5.jpg" alt="Milkmaid" title="Johannes Vermeer, c. 1660"></div>
+    </div>
+</main>
+<script>
+
+	
+$(document).ready(function() {
+
+    // --- 1. Core Function: Apply Filters ---
+    function applyFilters() {
+        const opacity = $("#sliderOpacity").val();
+        const saturation = $("#sliderSaturation").val();
+        const brightness = $("#sliderBrightness").val();
+        const hue = $("#sliderHue").val();
+        const gray = $("#sliderGray").val();
+        const blur = $("#sliderBlur").val();
+
+        // Update number displays
+        $("#numOpacity").text(opacity);
+        $("#numSaturation").text(saturation);
+        $("#numBrightness").text(brightness);
+        $("#numHue").text(hue);
+        $("#numGray").text(gray);
+        $("#numBlur").text(blur);
+
+        // Construct filter string
+        const filterString = "opacity(" + opacity + "%) " +
+                           "saturate(" + saturation + "%) " +
+                           "brightness(" + brightness + "%) " +
+                           "hue-rotate(" + hue + "deg) " +
+                           "grayscale(" + gray + "%) " +
+                           "blur(" + blur + "px)";
+
+        // Apply to image
+        $("#imgManipulated img").css({
+            "filter": filterString,
+            "-webkit-filter": filterString
+        });
+    }
+
+    // --- 2. Helper: Set Slider Value (with optional animation) ---
+    function setSliderValue(sliderId, targetVal, duration) {
+        const slider = $("#" + sliderId);
+        
+        // If duration is 0, just set it immediately
+        if (duration === 0) {
+            slider.val(targetVal).trigger("input");
+            return;
+        }
+
+        // Otherwise animate it
+        $({ val: slider.val() }).animate({ val: targetVal }, {
+            duration: duration, 
+            easing: "swing",
+            step: function() {
+                slider.val(this.val).trigger("input");
+            }
+        });
+    }
+
+    // --- 3. Image Switching ---
+    $("#thumbBox img").click(function() {
+        const smallSrc = $(this).attr("src");
+        const mediumSrc = smallSrc.replace("small", "medium");
+        $("#imgManipulated img").attr("src", mediumSrc);
+        
+        const altText = $(this).attr("alt");
+        const titleText = $(this).attr("title");
+        $("#imgManipulated figcaption").html("<em>" + altText + "</em><br>" + titleText);
+    });
+
+    // --- 4. Event Listeners ---
+    $(".sliders").on("input", applyFilters);
+
+    // --- 5. Fixed Reset Button Logic ---
+    $("#resetFilters").click(function(e) {
+        // 1. Prevent the button from submitting a form or refreshing the page
+        e.preventDefault();
+        
+        console.log("Resetting filters...");
+
+        // 2. Reset all sliders to default values
+        // We call the function directly to ensure the 'input' event is triggered
+        // This updates both the visual slider position and the filter on the image
+        setSliderValue("sliderOpacity", 100, 0);
+        setSliderValue("sliderSaturation", 100, 0);
+        setSliderValue("sliderBrightness", 100, 0);
+        setSliderValue("sliderHue", 0, 0);
+        setSliderValue("sliderGray", 0, 0);
+        setSliderValue("sliderBlur", 0, 0);
+    });
+
+});
+
+</script>    
+   
+</body></html>
