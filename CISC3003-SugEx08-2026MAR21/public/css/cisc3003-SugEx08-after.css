@@ -1,0 +1,145 @@
+
+body{
+	margin: 1%;
+	padding:1%;
+	background-color: rgba(0,0,255,.2);
+	font-size: 100%;
+	min-width: 500px;
+
+}
+header, footer{
+  background-color:#0066FF;
+  padding: 1%;
+  margin: 1%;
+}
+
+header h1{
+	font-size: 3rem;
+	color:rgba(0,0,0,.7);;
+}
+
+section{
+  margin:1%;
+    padding:1%;
+}
+
+nav a{
+	display:block;
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 35px;
+	text-decoration: none;
+	padding: 2%;
+	margin: 1%;
+}
+
+h1{
+	text-align: center;
+	color:rgba(255,0,0,.7);;
+}
+
+
+.myClass{
+	margin: 0em 1em;
+	padding:.75em;
+	border: 1px solid black;
+	border-radius: .25%;
+
+	/* Safari and Chrome */	
+	-webkit-column-count:3;
+	-moz-column-count: 3;
+	column-count:3;
+	
+}
+
+
+
+ol{
+	list-style:upper-roman; 
+	margin:1em;
+}
+img{
+	display: none;
+}
+
+footer{
+	clear: both;
+	text-align:center;
+	text-transform: uppercase;
+}
+
+/* =============== 响应式设计与特殊样式 =============== */
+
+
+@media screen and (min-width: 900px) {
+    
+    img {
+        display: block; 
+        width: 30%;     
+        margin: 1%;
+        float: left; 
+    }
+
+    section {
+        float: left;
+    }
+    
+    #left{
+    width:30%;
+    }
+    
+    #center{
+    width:60%;
+    }
+
+    header, #left, #center {
+        overflow: hidden; 
+    }
+    
+    header h1::after {
+    content: " (I guess...)"; 
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 3rem; 
+	}
+	
+	header, footer{
+	background-color: rgba(0,0,0,0);
+	}
+	
+	
+}
+
+/* =============== 打印视图样式 =============== */
+
+@media print {
+   
+    body {
+        background-color: #ffffff; 
+        color: #000000;   
+    }
+
+   
+    h1 {
+        font-size: 1em !important; 
+        margin-bottom: 0.5em; 
+    }
+
+   
+    nav a {
+        font-weight: normal;         
+        margin: 10px;            
+        padding: 0;            
+        background: none;      
+        border: none;  
+        text-decoration: underline       
+    }
+
+    img {
+        display: none;
+    }
+    
+    
+     
+     
+}
