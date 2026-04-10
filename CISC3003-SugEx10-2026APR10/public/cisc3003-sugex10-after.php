@@ -15,7 +15,7 @@ $customer_orders = readOrders($current_customer_id, 'data/orders.txt');
 <html lang="en">
 
 <head>
-    <title>DC226973 Chen Joaquin Antonio</title>
+    <title>DC226973 Chen Joaquin Antonio CISC3003 Suggested Exercise 10</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
