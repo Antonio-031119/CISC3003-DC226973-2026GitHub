@@ -15,7 +15,7 @@ $customer_orders = readOrders($current_customer_id, 'data/orders.txt');
 <html lang="en">
 
 <head>
-    <title>CISC3003 Suggested Exercise 10</title>
+    <title>DC226973 Chen Joaquin Antonio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -180,6 +180,8 @@ $customer_orders = readOrders($current_customer_id, 'data/orders.txt');
         </section>
     </main>    
 </div>    <!-- / mdl-layout --> 
+
+<footer><p>CISC3003 Web Programming: dc226973 Chen Joquin Antonio 2026</p></footer>
           
 </body>
 </html>
